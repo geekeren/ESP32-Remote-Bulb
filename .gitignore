@@ -1,0 +1,11 @@
+*/build
+*/resources
+*certs*
+*/lib
+.DS_Store
+.idea/
+ESP-Remote-Bulb.iml
+led/.DS_Store
+*sdkconfig
+*sdkconfig.old
+!/led/main/certs/README.md
