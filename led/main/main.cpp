@@ -66,7 +66,7 @@ void start_aws_iot_task()
 }
 extern "C" void app_main()
 {
-    app_led_blink();
+//    app_led_blink();
     connect_to_wifi();
     app_sntp_init();
     start_aws_iot_task();
