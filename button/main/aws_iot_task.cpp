@@ -1,20 +1,4 @@
 #include "aws_iot_task.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <unistd.h>
-#include <limits.h>
-#include <string.h>
-
-#include "freertos/FreeRTOS.h"
-#include "freertos/event_groups.h"
-#include "esp_system.h"
-#include "esp_log.h"
-#include "aws_iot_config.h"
-#include "aws_iot_log.h"
-#include "aws_iot_version.h"
-#include "aws_iot_mqtt_client_interface.h"
-#include "esp32_button.h"
 
 #define AWS_IOT_MQTT_CLIENT_ID "esp32_button"
 extern const uint8_t aws_root_ca_pem_start[] asm("_binary_aws_root_ca_pem_start");

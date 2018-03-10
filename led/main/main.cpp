@@ -37,22 +37,6 @@ static void app_sntp_init()
     ESP_LOGI("Time", "%s\n", strftime_buf);
 }
 
-void blink_task(void *pvParameter)
-{
-    gpio_pad_select_gpio(GPIO_NUM_2);
-    gpio_set_direction(GPIO_NUM_2, GPIO_MODE_OUTPUT);
-    while(1) {
-        gpio_set_level(GPIO_NUM_2, 0);
-        vTaskDelay(500 / portTICK_PERIOD_MS);
-        gpio_set_level(GPIO_NUM_2, 1);
-        vTaskDelay(500 / portTICK_PERIOD_MS);
-    }
-}
-
-void app_led_blink()
-{
-    xTaskCreate(&blink_task, "blink_task", configMINIMAL_STACK_SIZE, NULL, 5, NULL);
-}
 void connect_to_wifi()
 {
     CWiFi *my_wifi = CWiFi::GetInstance(WIFI_MODE_STA);
@@ -66,7 +50,6 @@ void start_aws_iot_task()
 }
 extern "C" void app_main()
 {
-//    app_led_blink();
     connect_to_wifi();
     app_sntp_init();
     start_aws_iot_task();

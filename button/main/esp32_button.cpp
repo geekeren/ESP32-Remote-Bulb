@@ -34,9 +34,7 @@ void esp32_button_register_listener(void (*listener)())
 {
     button_on_click_listener = *listener;
     gpio_set_intr_type(GPIO_INPUT_IO_0, GPIO_INTR_NEGEDGE);
-
     gpio_evt_queue = xQueueCreate(10, sizeof(uint32_t));
-
     xTaskCreate(gpio_task_example, "gpio_task_example", 2048, NULL, 10, NULL);
     gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
     gpio_isr_handler_remove(GPIO_INPUT_IO_0);
