@@ -40,7 +40,7 @@ void publish_button_click_topic() {
     paramsQOS1.payload = payload;
     paramsQOS1.isRetained = 0;
     paramsQOS1.payloadLen = strlen(payload);
-    rc = aws_iot_mqtt_publish(&client, "sdkTest/sub", 11, &paramsQOS1);
+    rc = aws_iot_mqtt_publish(&client, "esp32Button/switch", 18, &paramsQOS1);
     if(SUCCESS != rc) {
         IOT_ERROR("An error occurred in the loop.\n");
     } else {
