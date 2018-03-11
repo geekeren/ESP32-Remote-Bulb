@@ -15,10 +15,12 @@
 
 `
  export IOT_SOLUTION_PATH=$HOME/Workspace/IoT/esp-iot-solution
+ 
  export IOT_CLIENT_DIR=$HOME/Workspace/IoT/AWS-IoT-C-SDK
 `
 
 4.编译命令：`make`; 烧录命令: `make flash`
+
 5. USB串口驱动
 
  - 安装CP210* USB to UART Bridge Controller驱动：https://www.silabs.com/documents/public/software/Mac_OSX_VCP_Driver.zip
